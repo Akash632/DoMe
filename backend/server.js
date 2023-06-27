@@ -11,7 +11,11 @@ const PORT = process.env.PORT||8000;
 app.use(express.json());
 app.use(cors());
 
-
+app.get('/',(req,res)=>{
+    res.send(({
+        message:"server is working"
+    }))
+})
 app.use('/api/v1/tasks',router);
 
 app.use('/api/v1/user',userRoute);
