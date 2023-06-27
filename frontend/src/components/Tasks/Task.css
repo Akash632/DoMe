@@ -1,0 +1,139 @@
+.task-container{
+    display:flex;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  .todo-text-container{
+    width:80%
+  }
+  .todo-text-container p{
+    color:white;
+    font-size: 20px;
+  }
+  .task-main-container{
+    border-radius: 10px;
+    width:75%;
+    display:flex;
+    justify-content:space-evenly;
+    padding:20px;
+    align-items:center;
+    margin-top:20px;
+    background: linear-gradient(to right, #434343 0%, black 100%);
+    box-shadow: 5px 10px 18px #131313;
+  }
+  .todo-btn-container{
+    width:20%;
+    display:flex;
+    justify-content:space-evenly;
+  }
+  .update-btn{
+    font-size: 18px;
+    padding: 8px;
+    background-color: #f3ce13;
+    border: none;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: kanit;
+    width:30%
+  
+  }
+  .delete-btn{
+    font-size: 18px;
+    padding: 8px;
+    background-color: transparent;
+    border: solid 1px #f3ce13;
+    color: #f3ce13;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: kanit;
+    width:30%
+  } 
+
+  @media screen and (min-width:320px) and (max-width:576px){
+    /* .task-container{
+      border: solid 1px yellow;
+    } */
+    .task-main-container{
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .todo-text-container{
+      width:fit-content;
+    }
+    .todo-text-container p{
+      font-size: 15px;
+    }
+    .todo-btn-container{
+      width: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .update-btn{
+      font-size: 13px;
+      width: fit-content;
+      padding: 4px;
+    }
+    .delete-btn{
+      font-size: 13px;
+      width: fit-content;
+      padding: 4px;
+    }
+  }
+  @media screen and (min-width:577px) and (max-width:769px){
+    .task-main-container{
+      padding: 10px;
+      width: 78%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .todo-text-container{
+      width:fit-content;
+    }
+    .todo-text-container p{
+      font-size: 17px;
+    }
+    .todo-btn-container{
+      width: 120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .update-btn{
+      font-size: 15px;
+      width: fit-content;
+      padding: 5px;
+    }
+    .delete-btn{
+      font-size: 15px;
+      width: fit-content;
+      padding: 4px;
+    }
+  }
+  @media screen and (min-width:769px) and (max-width:1025px){
+    .task-main-container{
+      width: 72%;
+    }
+    .todo-btn-container{
+      width: 150px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .update-btn{
+      font-size: 20px;
+      width: fit-content;
+      padding: 5px;
+    }
+    .delete-btn{
+      font-size: 20px;
+      width: fit-content;
+      padding: 4px;
+    }
+  }

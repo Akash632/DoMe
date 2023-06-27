@@ -1,0 +1,106 @@
+.login-main-container{
+    background-size: cover;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card-container{
+  width: 30%;
+  padding: 20px;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  box-shadow: 5px 10px 18px #131313;
+  border-radius: 15px;
+}
+.login-heading{
+  font-size: 30px;
+  letter-spacing: 3px;
+  color:white;
+  margin: 0px 0px 10px 2px
+}
+.login-btn-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 2px 10px 0px;
+}
+.login-btn-container p{
+  color: white;
+  letter-spacing: 1px;
+}
+.login-btn-container p span{
+  cursor: pointer;
+  color: #f3ce13;
+}
+.login-btn{
+  background-color: #f3ce13;
+  color: black;
+  font-weight: 700;
+  font-size: 17px;
+  border: none;
+  padding: 8px;
+  width: fit-content;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: kanit;
+  letter-spacing: 1px;
+}
+.login-input-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.login-input{
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  border: solid;
+  border-width: 0px 0px 1px 0px;
+  font-family: kanit;
+  width: 100%;
+  margin-bottom: 23px;
+}
+.login-input:focus{
+  outline: none;
+}
+
+@media screen and (min-width:320px) and (max-width:576px){
+  .login-main-container{
+    padding: 15px;
+  }
+  .login-card-container{
+    width: 100%;
+  }
+  .login-btn-container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: start;
+  }
+  .login-btn{
+    width: fit-content;
+    padding: 5px;
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+  .login-input{
+    font-size: 15px;
+  }
+  .login-btn-container p{
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width:577px) and (max-width:769px){
+  .login-card-container{
+    width: 60%;
+  }
+}
+@media screen and (min-width:769px) and (max-width:1025px){
+  .login-card-container{
+    width: 60%;
+  }
+}

@@ -1,0 +1,23 @@
+.error-image-container{
+    height: 99vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.error-image-container img{
+    width: 30%;
+}
+.error-image-container button{
+    color: #f3ce13;
+    padding: 10px;
+    font-size: 15px;
+    border: solid 1px #f3ce13;
+    background-color: transparent;
+}
+
+@media screen and (min-width:320px) and (max-width:576px){
+    .error-image-container img{
+        width: 100%;
+    }
+}
