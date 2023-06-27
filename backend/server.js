@@ -16,6 +16,7 @@ app.get('/',(req,res)=>{
         message:"server is working"
     }))
 })
+
 app.use('/api/v1/tasks',router);
 
 app.use('/api/v1/user',userRoute);
