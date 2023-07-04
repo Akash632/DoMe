@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const connectdb = require('./database/db.js');
 const router = require('./routes/routes.js');
-const userRoute = require('./routes/userRoute.js');
+const userRouter = require('./routes/userRoute.js');
 const app = express();
 const cors = require('cors');
 
@@ -19,7 +19,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/v1/tasks',router);
 
-app.use('/api/v1/user',userRoute);
+app.use('/api/v1/user',userRouter);
 connectdb();
 
 app.listen(PORT);
