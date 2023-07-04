@@ -1,5 +1,5 @@
 .error-image-container{
-    height: 99vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

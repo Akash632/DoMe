@@ -3,6 +3,10 @@ import Task from "./components/Tasks/Task";
 import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
 import User from "./components/User/User";
 import Error from "./components/Errors/Error";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   let auth = localStorage.getItem('user');
   return (
@@ -14,6 +18,7 @@ function App() {
         <Route exact path="*" element={<Error/>}/>
       </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }

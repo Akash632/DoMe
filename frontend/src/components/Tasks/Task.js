@@ -1,8 +1,12 @@
-import react,{useState,useEffect} from "react";
+import {useState,useEffect} from "react";
 import Add from "../AddTodo/Add";
 import axios from 'axios';
 import './Task.css';
 import { useNavigate } from "react-router-dom";
+import { toast} from 'react-toastify';
+
+
+
 function Task() {
     const [data,setData] = useState();
     const [task,setTask] = useState("");
@@ -10,15 +14,26 @@ function Task() {
     const [update,setUpdate]=useState(false);
     const navigate = useNavigate();
     let userObj = JSON.parse(localStorage.getItem('user'));
-  
     const addTask = async ()=>{
       if(userObj){
-        const res = await axios.post(`http://localhost:4000/api/v1/tasks/add-task/${userObj.id}`,{
+        const res = await axios.post(`https://do-me.onrender.com/api/v1/tasks/add-task/${userObj.id}`,{
         task
-      });
+      })
       if(res.data.success){
         getData();
         setTask('');
+        toast.success(res.data.message,{
+          theme:'dark',
+          position:'bottom-right',
+          autoClose:3000
+        })
+      }
+      else if(res.data.success===false){
+        toast.warning(res.data.message,{
+          theme:'dark',
+          position:'bottom-right',
+          autoClose:3000
+        })
       }
       }else{
         navigate('/login')
@@ -26,9 +41,14 @@ function Task() {
     }
   
     const getData = async () =>{
-      const res = await axios.get(`http://localhost:4000/api/v1/tasks/get-tasks/${userObj.id}`);
+      const res = await axios.get(`https://do-me.onrender.com/api/v1/tasks/get-tasks/${userObj.id}`);
       if(res.data.success){
         setData(res.data.data);
+        toast.success(res.data.message,{
+          theme:'dark',
+          position:'bottom-right',
+          autoClose:3000
+        })
       }
     }
     useEffect( ()=>{
@@ -38,8 +58,13 @@ function Task() {
     },[userObj])
   
     const deleteTask = async (postId) =>{
-      const res = await axios.delete(`http://localhost:4000/api/v1/tasks/delete-task/${postId}`);
+      const res = await axios.delete(`https://do-me.onrender.com/api/v1/tasks/delete-task/${postId}`);
       if(res.data.success){
+        toast.success(res.data.message,{
+          theme:'dark',
+          position:'bottom-right',
+          autoClose:3000
+        })
         getData();
       }
     }
@@ -51,10 +76,15 @@ function Task() {
     }
   
     const updateTask = async () =>{
-      const res=await axios.put(`http://localhost:4000/api/v1/tasks/update-task/${id}`,{
+      const res=await axios.put(`https://do-me.onrender.com/api/v1/tasks/update-task/${id}`,{
         task
       })
       if(res.data.success){
+        toast.success(res.data.message,{
+          theme:'dark',
+          position:'bottom-right',
+          autoClose:3000
+        })
         getData();
         setId('');
         setTask('');

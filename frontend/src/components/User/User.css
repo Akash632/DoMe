@@ -1,6 +1,6 @@
 .login-main-container{
     background-size: cover;
-    height: 99vh;
+    min-height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -5,7 +5,7 @@ const signUpController = async(req,res)=>{
         const {name,email,password} = req.body;
 
         if(!name || !email || !password){
-            return res.status(400).send({
+            return res.status(200).send({
                 success:false,
                 message:"Please give valid details"
             })
@@ -43,7 +43,7 @@ const loginController = async (req,res)=>{
         const {email,password}=req.body;
 
     if(!email||!password){
-        return res.status(400).send({
+        return res.status(200).send({
             success:false,
             message:"Enter valid details"
         })
@@ -51,7 +51,7 @@ const loginController = async (req,res)=>{
 
     const user = await userModel.findOne({email:email});
     if(!user){
-        return res.status(400).send({
+        return res.status(200).send({
             success:false,
             message:"Email does not exists"
         })
@@ -59,7 +59,7 @@ const loginController = async (req,res)=>{
 
     if(user){
         if(password!==user.password){
-            return res.status(400).send({
+            return res.status(200).send({
                 success:false,
                 message:"Invalid password"
             })
